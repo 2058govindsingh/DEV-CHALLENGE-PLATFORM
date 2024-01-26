@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  nodeapp:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    volumes:
+      - gov:/usr/src/app/db
+      
+volumes:
+  gov:
